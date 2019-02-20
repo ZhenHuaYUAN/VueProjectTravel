@@ -16,3 +16,5 @@ border.css: 用于解决一像素边框问题，有些手机的屏幕分辨率�
 cnpm install fastclick --save  fastclick这个第三方的包，解决有些手机机型、有些浏览器触发click事件时会有300ms延迟的问题
 
 iconfont 管理图标
+
+cnpm install stylus --sava cnpm install stylus-loader --sava   stylus用于样式Css编写
