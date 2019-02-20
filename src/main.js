@@ -3,8 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import fastClick from 'fastclick'
+import './assets/styles/reset.css'
+import './assets/styles/border.css'
 
 Vue.config.productionTip = false
+fastClick.attach(document.body)
 
 // 在es6里键和值如果相同的话可以省略一部分的内容，router === router:router
 /* eslint-disable no-new */

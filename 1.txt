@@ -7,3 +7,12 @@
 页面跳转-->JS渲染
 优点：页面切换快
 缺点：首屏时间稍慢，SEO差
+
+
+reset.css:、重设浏览器默认样式、设置通用子类
+border.css: 用于解决一像素边框问题，有些手机的屏幕分辨率较高，
+是2-3倍屏幕。css样式中border:1px solid red;在2倍屏下，显示的并不是1个物理像素，而是2个物理像素。
+
+cnpm install fastclick --save  fastclick这个第三方的包，解决有些手机机型、有些浏览器触发click事件时会有300ms延迟的问题
+
+iconfont 管理图标
