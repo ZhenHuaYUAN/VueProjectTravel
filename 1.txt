@@ -23,3 +23,5 @@ cnpm install stylus --sava cnpm install stylus-loader --sava   stylus用于样�
 vue-awesome-swiper 用于快速的构建一个轮播图
 
 使用axios发送ajax请求 cnpm install axios --save
+
+BetterScroll 页面滚动
