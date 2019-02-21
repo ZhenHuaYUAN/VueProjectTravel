@@ -24,4 +24,4 @@ vue-awesome-swiper 用于快速的构建一个轮播图
 
 使用axios发送ajax请求 cnpm install axios --save
 
-BetterScroll 页面滚动
+BetterScroll 页面滚动 cnpm install better-scroll --save
