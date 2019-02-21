@@ -18,3 +18,6 @@ cnpm install fastclick --save  fastclick这个第三方的包，解决有些手�
 iconfont 管理图标
 
 cnpm install stylus --sava cnpm install stylus-loader --sava   stylus用于样式Css编写
+
+
+vue-awesome-swiper 用于快速的构建一个轮播图
