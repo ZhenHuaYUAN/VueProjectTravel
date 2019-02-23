@@ -6,7 +6,9 @@
     <!-- 搜索出来的内容显示在这个区块里 -->
     <div class="search-content" ref="search" v-show="keyWord">
       <ul>
-        <li class="search-item border-bottom" v-for="item of list" :key="item.id" >{{item.name}}</li>
+        <li class="search-item border-bottom" v-for="item of list" :key="item.id" @click="handleCityClick(item.name)">
+          {{item.name}}
+        </li>
         <li class="search-item border-bottom" v-show='hasNoData'>没有找到匹配城市</li>
       </ul>
     </div>
@@ -14,6 +16,7 @@
 </template>
 
 <script>
+import { mapMutations } from 'Vuex'
 import Bscroll from 'better-scroll'
 export default {
   name: 'CitySearch',
@@ -23,6 +26,16 @@ export default {
       list: [],
       timer: null
     }
+  },
+  methods: {
+    handleCityClick (city) {
+      // 使用Vuex中的Actions 调用Dispatch方法。当逻辑不复杂时候可以省略action的步骤
+      // this.$store.commit('changeCity', city)
+      this.changeCity(city)
+      // 做页面跳转，跳转到主页
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
   },
   computed: {
     hasNoData () {
