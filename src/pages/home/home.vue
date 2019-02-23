@@ -15,6 +15,7 @@ import HomeIcons from './components/icons'
 import HomeRecommend from './components/recommend'
 import HomeWeekend from './components/weekend'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'Home',
   components: {
@@ -26,20 +27,33 @@ export default {
   },
   data () {
     return {
+      lastCity: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
       weekendList: []
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   // 声明周期函数
   mounted () {
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  // 使用了keep-alive后的生命周期函数，页面重新被显示的时候会执行
+  activated () {
+    // 判断当前页面的城市和上一次的是否相同，如果不相同，再发一次ajax请求
+    if (this.lastCity !== this.city) {
+      this.getHomeInfo()
+      this.lastCity = this.city
+    }
   },
   methods: {
     getHomeInfo () {
       // 在config的index.js中 proxyTable 设置代理转发
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city=' + this.city)
         .then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
