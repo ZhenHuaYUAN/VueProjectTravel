@@ -37,7 +37,13 @@ export default {
     }
   },
   activated () {
+    // 绑定的是全局的window组件，不仅仅对这个组件有效果，对其他组件也会产生影响。需要进行解绑
     window.addEventListener('scroll', this.handleScroll)
+  },
+  // 页面即将被替换成新的页面时执行
+  deactivated () {
+    // 解绑
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
