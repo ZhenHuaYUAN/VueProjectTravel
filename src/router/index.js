@@ -24,5 +24,9 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  // 每一次做路由切换时，都让新进入显示的页面x轴初始位置为0，y轴初试位置也为0
+  scrollBehavior (to, from, savePosition) {
+    return {x: 0, y: 0}
+  }
 })
